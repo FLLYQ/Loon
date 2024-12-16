@@ -1,9 +1,17 @@
 #!name=获取cookie&token合集，获取后禁用该配置
 #!date = 2024-11-10 15:00:00
-#############################################
+
+[Argument]
+arg1 = switch,true,tag=高德打车token
+arg2 = switch,true,tag=蜜雪冰城获取token
+arg3 = switch,true,tag=携程旅行获取token
+arg = switch,true,tag=什么值得买获取token
+
 [Script]
+http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60,  enable = {arg2}, tag=蜜雪冰城获取token
+
+
 # > 什么值得买 (APP点击个人头像/个人资料获取)
-# hostname = 
 http-request ^https:\/\/user-api\.smzdm\.com\/users\/info script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, timeout=60, tag=什么值得买
 
 # > 顺丰速运
