@@ -1,4 +1,4 @@
-#!name=获取cookie&token合集，获取后禁用该配置
+#!name=获取cookie合集，获取后禁用该配置
 #!date = 2024-12-10 15:00:00
 
 [Argument]
@@ -6,7 +6,6 @@ arg1 = switch,true,tag=高德打车获取token
 arg2 = switch,true,tag=蜜雪冰城获取token
 arg3 = switch,true,tag=携程旅行获取token
 arg4 = switch,true,tag=什么值得买获取token
-arg5 = switch,true,tag=顺丰速运获取token
 
 [Script]
 # > 高德打车
@@ -21,9 +20,6 @@ http-request ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/14946\/json\/userBaseInfo 
 # > 什么值得买 (APP点击个人头像/个人资料获取)
 http-request ^https:\/\/user-api\.smzdm\.com\/users\/info script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, timeout=60,  enable = {arg4}, tag=什么值得买获取token
 
-# > 顺丰速运 (微信小程序-我的-积分获取)
-http-request ^https:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/share\/weChat\/shareGiftReceiveRedirect script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, timeout=60,  enable = {arg5}, tag=顺丰速运获取token
-
 [MITM]
 # 去重后的，将对以下域名进行MITM（MAN-IN-THE-MIDDLE：中间人攻击）
-hostname = *.amap.com, mxsa.mxbc.net, *.ctrp.com, *.smzdm.com, mcs-mimp-web.sf-express.com
+hostname = *.amap.com, mxsa.mxbc.net, *.ctrp.com, *.smzdm.com
