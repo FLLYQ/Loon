@@ -22,7 +22,7 @@ http-request ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/14946\/json\/userBaseInfo 
 http-request ^https:\/\/user-api\.smzdm\.com\/users\/info script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, timeout=60,  enable = {arg4}, tag=什么值得买获取token
 
 # > 顺丰速运 (微信小程序-我的-积分获取)
-http-request ^https:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/share\/weChat\/shareGiftReceiveRedirect script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, timeout=60, tag=顺丰速运获取token
+http-request ^https:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/share\/weChat\/shareGiftReceiveRedirect script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, timeout=60,  enable = {arg5}, tag=顺丰速运获取token
 
 [MITM]
 # 去重后的，将对以下域名进行MITM（MAN-IN-THE-MIDDLE：中间人攻击）
